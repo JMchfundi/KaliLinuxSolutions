@@ -1,0 +1,21 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Guru Ubuntu Installer ISO - Jei Mchfundi" {
+        set isofile="/boot/iso/ubuntu-20.04.1-desktop-amd64.iso"
+        loopback loop (hd0,1)$isofile
+        linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=$isofile noprompt noeject
+        initrd (loop)/casper/initrd.lz
+}
+
+menuentry 'Guru Windows Installer Partition - Jei Mchfundi' {
+	set root=(hd0,3)
+	insmod part_msdos
+	insmod	ntfs
+	insmod	ntldr
+	drivemap -s (hd0)${root}
+	ntldr /bootmgr
+}
