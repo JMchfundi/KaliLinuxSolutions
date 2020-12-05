@@ -5,10 +5,18 @@ exec tail -n +3 $0
 # the 'exec tail' line above.
 
 menuentry "Guru Ubuntu Installer ISO - Jei Mchfundi" {
-        set isofile="/boot/iso/ubuntu-20.04.1-desktop-amd64.iso"
+        set isofile="/boot/iso/ubuntu.iso"
         loopback loop (hd0,1)$isofile
         linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
         initrd (loop)/casper/initrd
+}
+
+
+menuentry "Guru Ubuntu Installer ISO - Jei Mchfundi" {
+        set isofile="/boot/iso/linux.iso"
+        loopback loop (hd0,1)$isofile
+        linux (loop)/live/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+        initrd (loop)/live/initrd
 }
 
 menuentry 'Guru Windows Installer Partition - Jei Mchfundi' {
