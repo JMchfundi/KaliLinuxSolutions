@@ -16,7 +16,7 @@ menuentry "Guru Ubuntu Linux ISO - Jei Mchfundi" {
         set isofile="/boot/iso/linux.iso"
         loopback loop (hd0,1)$isofile
         linux (loop)/live/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
-        initrd (loop)/live/initrd
+        initrd (loop)/live/initrd.img
 }
 
 menuentry 'Guru Windows Installer Partition - Jei Mchfundi' {
