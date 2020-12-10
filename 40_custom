@@ -12,7 +12,7 @@ menuentry "Guru Ubuntu Installer ISO - Jei Mchfundi" {
 }
 
 
-menuentry "Guru Ubuntu Linux ISO - Jei Mchfundi" {
+menuentry "Guru Linux Installer ISO - Jei Mchfundi" {
         set isofile="/boot/iso/linux.iso"
         loopback loop (hd0,1)$isofile
         linux (loop)/live/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
