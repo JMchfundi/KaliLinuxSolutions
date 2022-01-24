@@ -1,0 +1,3 @@
+cd %ProgramFiles%\Oracle\VirtualBox\
+
+VBoxManage internalcommands createrawvmdk -filename "%ProgramFiles%\Oracle\VirtualBox\rawDisk0000.vmdk" -rawdisk \\.\PhysicalDrive1
